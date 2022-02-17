@@ -67,7 +67,7 @@ if($action == "delete_vacancy"){
 }
 if($action == "save_application"){
 	
-	$save = $crud->save_application($_POST);
+	$save = $crud->save_application();
 	
 	if($save)
 		echo $save;

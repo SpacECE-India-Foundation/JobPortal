@@ -182,19 +182,19 @@ Class Action {
 		if($delete)
 			return 1;
 	}
-	function save_application($post){
-		var_dump($post);
-		extract($post);
+	function save_application(){
+		var_dump($_POST);
+		extract($_POST);
 		
-	 $lastname=$post['lastname'];
-	 $firstname=$post['firstname'];
-	 $middlename=$post['middlename'];
-	 $address=$post['address'];
-	 $contact=$post['contact'];
-	 $email=$post['email'];
-	 $gender=$post['gender'];
-	 $cover_letter=$post['cover_letter'];
-	 $position_id=$post['position_id'];
+	 $lastname=$_POST['lastname'];
+	 $firstname=$_POST['firstname'];
+	 $middlename=$_POST['middlename'];
+	 $address=$_POST['address'];
+	 $contact=$_POST['contact'];
+	 $email=$_POST['email'];
+	 $gender=$_POST['gender'];
+	 $cover_letter=$_POST['cover_letter'];
+	 $position_id=$_POST['position_id'];
 		$data = " lastname = '$lastname' ";
 		$data .= ", firstname = '$firstname' ";
 		$data .= ", middlename = '$middlename' ";
