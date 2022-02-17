@@ -11,6 +11,7 @@
     }
     ob_end_flush();
     include('header.php');
+    //include('assignment.php');
 
 	
     ?>
@@ -46,6 +47,8 @@
         <?php 
         $page = isset($_GET['page']) ?$_GET['page'] : "home";
         include $page.'.php';
+        include('header.php');
+
         ?>
        
 
