@@ -122,6 +122,7 @@
 }
 $(document).ready(function(){
 	$('#manage-application').submit(function(e){
+		alert("Submitted");
 		e.preventDefault()
 		start_load()
 		$.ajax({
