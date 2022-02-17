@@ -30,7 +30,7 @@ if($action == 'save_user'){
 		echo $save;
 }
 if($action == 'delete_user'){
-	$save = $crud->delete_user();
+	//$save = $crud->delete_user();
 	if($save)
 		echo $save;
 }
@@ -65,7 +65,9 @@ if($action == "delete_vacancy"){
 		echo $save;
 }
 if($action == "save_application"){
+	var_dump($_POST);
 	$save = $crud->save_application();
+
 	if($save)
 		echo $save;
 }
