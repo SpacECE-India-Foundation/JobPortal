@@ -10,13 +10,17 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ body{
+   color: blue;
+ }
 :root {
-  --blue: hsl(162, 100%, 50%);
-  --indigo: #281d3a;
-  --purple: #251446;
+  --blue: #0b1622;
+  --indigo: #3a107e;
+  --purple: #1f5a4b;
   --pink: #e83e8c;
-  --red: #501319;
-  --orange: #4a79ac;
+  --red: #948284;
+  --orange: #007bff;
   --yellow: #ffc107;
   --green: #28a745;
   --teal: #20c997;
