@@ -21,7 +21,7 @@ Class Action {
 
     
     $this->db = $conn;
-	var_dump($_POST);
+	
 	}
 	function __destruct() {
 	    $this->db->close();
@@ -183,8 +183,18 @@ Class Action {
 			return 1;
 	}
 	function save_application(){
+
 		extract($_POST);
 		var_dump($_POST);
+	 $lastname=$_POST['lastname'];
+	 $firstname=$_POST['firstname'];
+	 $middlename=$_POST['middlename'];
+	 $address=$_POST['address'];
+	 $contact=$_POST['contact'];
+	 $email=$_POST['email'];
+	 $gender=$_POST['gender'];
+	 $cover_letter=$_POST['cover_letter'];
+	 $position_id=$_POST['position_id'];
 		$data = " lastname = '$lastname' ";
 		$data .= ", firstname = '$firstname' ";
 		$data .= ", middlename = '$middlename' ";
