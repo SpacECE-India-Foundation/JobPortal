@@ -69,8 +69,8 @@ if($action == "save_application"){
 	var_dump($_POST);
 	$save = $crud->save_application();
 	$save=1;
-	if($save)
-		echo $save;
+	//if($save)
+	//	echo $save;
 }
 if($action == "delete_application"){
 	$save = $crud->delete_application();

@@ -125,6 +125,7 @@ $(document).ready(function(){
 		
 		e.preventDefault()
 		start_load()
+		aler(new FormData($(this)[0]));
 		$.ajax({
 			url:'admin/ajax.php?action=save_application',
 			data: new FormData($(this)[0]),
