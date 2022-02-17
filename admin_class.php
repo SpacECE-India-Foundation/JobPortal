@@ -21,7 +21,7 @@ Class Action {
 		if($qry->num_rows > 0){
 			foreach ($qry->fetch_array() as $key => $value) {
 				if($key != 'passwors' && !is_numeric($key))
-					$_SESSION['login_'.$key] = $value;
+					$SESSION['login'.$key] = $value;
 			}
 				return 1;
 		}else{
@@ -34,7 +34,7 @@ Class Action {
 		if($qry->num_rows > 0){
 			foreach ($qry->fetch_array() as $key => $value) {
 				if($key != 'passwors' && !is_numeric($key))
-					$_SESSION['login_'.$key] = $value;
+					$SESSION['login'.$key] = $value;
 			}
 				return 1;
 		}else{
@@ -90,7 +90,7 @@ Class Action {
 			if($qry->num_rows > 0){
 				foreach ($qry->fetch_array() as $key => $value) {
 					if($key != 'passwors' && !is_numeric($key))
-						$_SESSION['login_'.$key] = $value;
+						$SESSION['login'.$key] = $value;
 				}
 			}
 			return 1;
@@ -121,7 +121,7 @@ Class Action {
 		$query = $this->db->query("SELECT * FROM system_settings limit 1")->fetch_array();
 		foreach ($query as $key => $value) {
 			if(!is_numeric($key))
-				$_SESSION['setting_'.$key] = $value;
+				$SESSION['setting'.$key] = $value;
 		}
 
 			return 1;
@@ -197,6 +197,17 @@ Class Action {
 			$save = $this->db->query("UPDATE application set ".$data." where id=".$id);
 		}
 		if($save)
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		$to=$email;
+		$subject="Welcome to SpaceEce";
+		$message="Please find your assignment below
+		Assignment: Create an api";
+		
+		$headers .= 'From: <webmaster@example.com>' . "\r\n";
+		$headers .= 'Cc: myboss@example.com' . "\r\n";
+		
+		mail($to,$subject,$message,$headers);
 			return 1;
 	}
 	function delete_application(){
