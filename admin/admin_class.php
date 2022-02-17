@@ -2,13 +2,26 @@
 session_start();
 ini_set('display_errors', 1);
 Class Action {
+	
 	private $db;
+	public $lastname;
+	public $firstname;
+	public $middlename;
+	public $address;
+	public $contact;
+	public $email;
+	public $gender;
+	public $cover_letter;
+	public $position_id;
+
 
 	public function __construct() {
 		ob_start();
    	include 'db_connect.php';
+
     
     $this->db = $conn;
+	var_dump($_POST);
 	}
 	function __destruct() {
 	    $this->db->close();
