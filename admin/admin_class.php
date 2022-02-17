@@ -171,6 +171,7 @@ Class Action {
 	}
 	function save_application(){
 		extract($_POST);
+		var_dump($_POST);
 		$data = " lastname = '$lastname' ";
 		$data .= ", firstname = '$firstname' ";
 		$data .= ", middlename = '$middlename' ";
