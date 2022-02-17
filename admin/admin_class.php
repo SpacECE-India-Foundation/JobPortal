@@ -183,7 +183,7 @@ Class Action {
 			return 1;
 	}
 	function save_application($post){
-		//var_dump($_POST);
+		var_dump($post);
 		extract($post);
 		
 	 $lastname=$post['lastname'];
