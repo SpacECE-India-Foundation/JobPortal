@@ -183,9 +183,9 @@ Class Action {
 			return 1;
 	}
 	function save_application(){
-
-		extract($_POST);
 		var_dump($_POST);
+		extract($_POST);
+		
 	 $lastname=$_POST['lastname'];
 	 $firstname=$_POST['firstname'];
 	 $middlename=$_POST['middlename'];
