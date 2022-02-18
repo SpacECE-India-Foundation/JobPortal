@@ -200,15 +200,13 @@ Class Action {
 			$save = $this->db->query("UPDATE application set ".$data." where id=".$id);
 		}
 		if($save)
-		$headers="";
-		$headers .= "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		
 		$to=$email;
 		$subject="Welcome to SpaceEce";
 		$message="Please find your assignment below
 		Assignment: Create an api";
 		
-		$headers .= 'From: <webmaster@example.com>' . "\r\n";
+		$headers = 'From: <webmaster@example.com>' . "\r\n";
 		$headers .= 'Cc: myboss@example.com' . "\r\n";
 		
 		mail($to,$subject,$message,$headers);
