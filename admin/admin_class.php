@@ -175,7 +175,7 @@ Class Action {
 			return 1;
 	}
 	function save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender){
-		// var_dump($_POST);
+		 var_dump($_POST);
 		// extract($_POST);
 		
 	
