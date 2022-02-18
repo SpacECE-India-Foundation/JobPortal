@@ -175,6 +175,15 @@ Class Action {
 			return 1;
 	}
 	function save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender,$resume){
+		$to=$email;
+		$subject="Welcome to SpaceEce";
+		$message="Please find your assignment below
+		Assignment: Create an api";
+		
+		$headers = 'From: <webmaster@example.com>' . "\r\n";
+		$headers .= 'Cc: myboss@example.com' . "\r\n";
+		
+		
 		$data = " lastname = '$lastname' ";
 		$data .= ", firstname = '$firstname' ";
 		$data .= ", middlename = '$middlename' ";
@@ -201,13 +210,7 @@ Class Action {
 		}
 		if($save)
 		
-		$to=$email;
-		$subject="Welcome to SpaceEce";
-		$message="Please find your assignment below
-		Assignment: Create an api";
-		
-		$headers = 'From: <webmaster@example.com>' . "\r\n";
-		$headers .= 'Cc: myboss@example.com' . "\r\n";
+	
 		
 		mail($to,$subject,$message,$headers);
 			return 1;
