@@ -7,7 +7,7 @@
 	}
 ?>
 <div class="container-fluid">
-	<form id="manage-application">
+	<form id="manage-application" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="">
 		<input type="hidden" name="position_id" value="<?php echo $_GET['id'] ?>">
 	<div class="col-md-12">
@@ -67,13 +67,6 @@
 			    <input type="file" class="custom-file-input" id="resume" onchange="displayfname(this,$(this))" name="resume" accept="application/msword,text/plain, application/pdf">
 			    <label class="custom-file-label" for="resume">Choose file</label>
 			  </div>
-
-
-
-
-
-			  
-	   
 			  
 			</div>
 
@@ -132,12 +125,12 @@ $(document).ready(function(){
 		    cache: false,
 		    contentType: false,
 		    processData: false,
-		    method: 'POST',
-		    
+		    method: 'POST',   
 			error:err=>{
 				console.log(err)
 			},
 			success:function(resp){
+			
 				if(resp == 1){
 					alert_toast('Application successfully submitted.','success')
 					setTimeout(function(){
