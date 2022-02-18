@@ -4,15 +4,7 @@ ini_set('display_errors', 1);
 Class Action {
 	
 	private $db;
-	public $lastname;
-	public $firstname;
-	public $middlename;
-	public $address;
-	public $contact;
-	public $email;
-	public $gender;
-	public $cover_letter;
-	public $position_id;
+	
 
 
 	public function __construct() {
@@ -182,19 +174,11 @@ Class Action {
 		if($delete)
 			return 1;
 	}
-	function save_application(){
-		var_dump($_POST);
-		extract($_POST);
+	function save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender){
+		// var_dump($_POST);
+		// extract($_POST);
 		
-	 $lastname=$_POST['lastname'];
-	 $firstname=$_POST['firstname'];
-	 $middlename=$_POST['middlename'];
-	 $address=$_POST['address'];
-	 $contact=$_POST['contact'];
-	 $email=$_POST['email'];
-	 $gender=$_POST['gender'];
-	 $cover_letter=$_POST['cover_letter'];
-	 $position_id=$_POST['position_id'];
+	
 		$data = " lastname = '$lastname' ";
 		$data .= ", firstname = '$firstname' ";
 		$data .= ", middlename = '$middlename' ";
