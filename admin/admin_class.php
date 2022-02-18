@@ -175,10 +175,6 @@ Class Action {
 			return 1;
 	}
 	function save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender,$resume){
-		 //var_dump($_POST);
-		// extract($_POST);
-		print_r($_POST);
-	
 		$data = " lastname = '$lastname' ";
 		$data .= ", firstname = '$firstname' ";
 		$data .= ", middlename = '$middlename' ";
@@ -191,31 +187,30 @@ Class Action {
 		if(isset($status))
 		$data .= ", process_id = '$status' ";
 
-		// if($_FILES['resume']['tmp_name'] != ''){
-		// 				//$fname = strtotime(date('y-m-d H:i')).'_'.$_FILES['resume']['name'];
-		// 				//$move = move_uploaded_file($_FILES['resume']['tmp_name'],'assets/resume/'. $fname);
-		// 		//	$data .= ", resume_path = '$fname' ";
+		if($_FILES['resume']['tmp_name'] != ''){
+						$fname = strtotime(date('y-m-d H:i')).'_'.$_FILES['resume']['name'];
+						$move = move_uploaded_file($_FILES['resume']['tmp_name'],'assets/resume/'. $fname);
+					$data .= ", resume_path = '$fname' ";
 
-		// }
+		}
 		if(empty($id)){
-			// echo "INSERT INTO application set ".$data;
-			// exit;
+			
 			$save = $this->db->query("INSERT INTO application set ".$data);
 		}else{
 			$save = $this->db->query("UPDATE application set ".$data." where id=".$id);
 		}
 		if($save)
-		// $headers = "MIME-Version: 1.0" . "\r\n";
-		// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-		// $to=$email;
-		// $subject="Welcome to SpaceEce";
-		// $message="Please find your assignment below
-		// Assignment: Create an api";
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		$to=$email;
+		$subject="Welcome to SpaceEce";
+		$message="Please find your assignment below
+		Assignment: Create an api";
 		
-		// $headers .= 'From: <webmaster@example.com>' . "\r\n";
-		// $headers .= 'Cc: myboss@example.com' . "\r\n";
+		$headers .= 'From: <webmaster@example.com>' . "\r\n";
+		$headers .= 'Cc: myboss@example.com' . "\r\n";
 		
-		// mail($to,$subject,$message,$headers);
+		mail($to,$subject,$message,$headers);
 			return 1;
 	}
 	function delete_application(){
