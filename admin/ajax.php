@@ -67,7 +67,7 @@ if($action == "delete_vacancy"){
 }
 if($action === "save_application"){
 echo "Inside";
- 	print_r($_POST);
+ 	print_r($_GET);
 	 
 // 	$resume="test";
 // 	$lastname=$_POST['lastname'];
