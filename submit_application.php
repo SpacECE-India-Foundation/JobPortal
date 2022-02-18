@@ -67,7 +67,7 @@
 			    <input type="file" class="custom-file-input" id="resume" onchange="displayfname(this,$(this))" name="resume" accept="application/msword,text/plain, application/pdf">
 			    <label class="custom-file-label" for="resume">Choose file</label>
 			  </div>
-			  
+
 			</div>
 
 		</div>
@@ -125,10 +125,7 @@ $(document).ready(function(){
 		    cache: false,
 		    contentType: false,
 		    processData: false,
-		    method: 'POST',   
-			error:err=>{
-				console.log(err)
-			},
+		    method: 'POST',
 			success:function(resp){
 			
 				if(resp == 1){
