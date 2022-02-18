@@ -200,7 +200,8 @@ Class Action {
 			$save = $this->db->query("UPDATE application set ".$data." where id=".$id);
 		}
 		if($save)
-		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers="";
+		$headers .= "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 		$to=$email;
 		$subject="Welcome to SpaceEce";
