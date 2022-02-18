@@ -65,24 +65,25 @@ if($action == "delete_vacancy"){
 	if($save)
 		echo $save;
 }
-if($action == "save_application"){
+if($action === "save_application"){
+echo "Inside";
+ 	print_r($_POST);
+	 
+// 	$resume="test";
+// 	$lastname=$_POST['lastname'];
+// $firstname=$_POST['firstname'];
+// $middlename=$_POST['middlename'];
+// $address=$_POST['address'];
+// $contact=$_POST['contact'];
+// $email=$_POST['email'];
+// $gender=$_POST['gender'];
+// $cover_letter=$_POST['cover_letter'];
+// $position_id=$_POST['position_id'];
 
-	print_r($_POST);
-	$resume="test";
-	$lastname=$_POST['lastname'];
-$firstname=$_POST['firstname'];
-$middlename=$_POST['middlename'];
-$address=$_POST['address'];
-$contact=$_POST['contact'];
-$email=$_POST['email'];
-$gender=$_POST['gender'];
-$cover_letter=$_POST['cover_letter'];
-$position_id=$_POST['position_id'];
-
-	$save = $crud->save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender,$resume);
+// 	$save = $crud->save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender,$resume);
 	
-	if($save)
-		echo $save;
+// 	if($save)
+// 		echo $save;
 }
 if($action == "delete_application"){
 	$save = $crud->delete_application();
