@@ -68,6 +68,7 @@ if($action == "delete_vacancy"){
 if($action == "save_application"){
 
 	print_r($_POST);
+	$resume="test";
 	$lastname=$_POST['lastname'];
 $firstname=$_POST['firstname'];
 $middlename=$_POST['middlename'];
@@ -78,7 +79,7 @@ $gender=$_POST['gender'];
 $cover_letter=$_POST['cover_letter'];
 $position_id=$_POST['position_id'];
 
-	$save = $crud->save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender);
+	$save = $crud->save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender,$resume);
 	
 	if($save)
 		echo $save;

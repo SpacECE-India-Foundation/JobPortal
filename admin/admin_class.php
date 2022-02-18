@@ -174,7 +174,7 @@ Class Action {
 		if($delete)
 			return 1;
 	}
-	function save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender){
+	function save_application($firstname,$lastname,$middlename,$address,$position_id,$cover_letter,$contact,$email,$gender,$resume){
 		 //var_dump($_POST);
 		// extract($_POST);
 		print_r($_POST);
@@ -191,12 +191,12 @@ Class Action {
 		if(isset($status))
 		$data .= ", process_id = '$status' ";
 
-		if($_FILES['resume']['tmp_name'] != ''){
-						$fname = strtotime(date('y-m-d H:i')).'_'.$_FILES['resume']['name'];
-						$move = move_uploaded_file($_FILES['resume']['tmp_name'],'assets/resume/'. $fname);
-					$data .= ", resume_path = '$fname' ";
+		// if($_FILES['resume']['tmp_name'] != ''){
+		// 				//$fname = strtotime(date('y-m-d H:i')).'_'.$_FILES['resume']['name'];
+		// 				//$move = move_uploaded_file($_FILES['resume']['tmp_name'],'assets/resume/'. $fname);
+		// 		//	$data .= ", resume_path = '$fname' ";
 
-		}
+		// }
 		if(empty($id)){
 			// echo "INSERT INTO application set ".$data;
 			// exit;
