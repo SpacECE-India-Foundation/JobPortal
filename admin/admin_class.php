@@ -215,6 +215,44 @@ Class Action {
 		mail($to,$subject,$message,$headers);
 			return 1;
 	}
+	function save_assignment(){
+		extract($_POST);
+		
+		$data .= ", email = '$email' ";
+		
+		$data .= ", assignment = '".htmlentities(str_replace("'","&#x2019;",$assignment))."' ";
+		
+		if($_FILES['assignment']['tmp_name'] != ''){
+						$fname = strtotime(date('y-m-d H:i')).'_'.$_FILES['assignment']['name'];
+						$move = move_uploaded_file($_FILES['assignment']['tmp_name'],'assets/assignment/'. $fname);
+					$data .= ", assignment_path = '$fname' ";
+
+		}
+		if(empty($id)){
+			// echo "INSERT INTO application set ".$data;
+			// exit;
+			
+			$save = $this->db->query("UPDATE application set ".$data." where email=".$email);
+			
+		}
+		if($save)
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		
+		//$message="Please find your assignment below
+	    //Assignment: Create an api";
+		 //More headers
+		//$headers .= 'From: <webmaster@example.com>' . "\r\n";
+		//$headers .= 'Cc: myboss@example.com' . "\r\n";
+		
+		//mail($to,$subject,$message,$headers);
+		//if (mail($to_email, $subject, $body, $headers)) {
+		//	echo "Email successfully sent to $to_email...";
+		//} else {
+		//	echo "Email sending failed...";
+		//}
+			return 1;
+	}
 	function delete_application(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM application where id = ".$id);

@@ -90,6 +90,12 @@ if($action == "delete_application"){
 	if($save)
 		echo $save;
 }
+if($action == "save_assignment"){
+	$save = $crud->save_assignment();
+	if($save)
+		echo $save;
+}
+
 
 
 
