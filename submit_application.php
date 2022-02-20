@@ -130,6 +130,7 @@ $(document).ready(function(){
 			
 				if(resp == 1){
 					alert_toast('Application successfully submitted.','success')
+					window.location.href ="candidate_assignment.php";
 					setTimeout(function(){
 						location.reload()
 					},1000)
