@@ -91,7 +91,10 @@ if($action == "delete_application"){
 		echo $save;
 }
 if($action == "save_assignment"){
-	$save = $crud->save_assignment();
+	$email=$_POST['email'];
+	$description=$_POST['assignments'];
+
+	$save = $crud->save_assignment($email,$description);
 	if($save)
 		echo $save;
 }

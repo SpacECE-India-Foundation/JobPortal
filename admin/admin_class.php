@@ -215,7 +215,7 @@ Class Action {
 		mail($to,$subject,$message,$headers);
 			return 1;
 	}
-	function save_assignment(){
+	function save_assignment($email,$description){
 		extract($_POST);
 		
 		$data .= ", email = '$email' ";

@@ -2,6 +2,7 @@
 include('header.php');
 ?>
 <div class="container  ">
+<title>SpaceEce</title>
 
 <form id="sc"> 
 <div class="col-md-4">
@@ -92,4 +93,4 @@ include('header.php');
 })
 </script>
 
-</div>             
+</div>
