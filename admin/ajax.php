@@ -69,7 +69,7 @@ if($action === "save_application"){
 // echo "Inside";
 
 	 
-	$resume=$_FILE['resume'];
+	//$resume=$_FILE['resume'];
 	$lastname=$_POST['lastname'];
 $firstname=$_POST['firstname'];
 $middlename=$_POST['middlename'];
@@ -92,7 +92,7 @@ if($action == "delete_application"){
 		echo $save;
 }
 if($action == "save_assignment"){
-	$assignment=$_FILE['assignment'];
+	//$assignment=$_FILE['assignment'];
 	$email=$_POST['email'];
 	$description=$_POST['assignments'];
 
