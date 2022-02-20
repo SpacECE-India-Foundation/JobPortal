@@ -69,7 +69,7 @@ if($action === "save_application"){
 // echo "Inside";
 
 	 
-	$resume=$_FILES['resume'];
+	$resume=$_FILES['resume'][0];
 	$lastname=$_POST['lastname'];
 $firstname=$_POST['firstname'];
 $middlename=$_POST['middlename'];
