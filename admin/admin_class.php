@@ -236,9 +236,11 @@ Class Action {
 			
 		}
 		if($save)
-		$headers = "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-		
+		// $headers = "MIME-Version: 1.0" . "\r\n";
+		// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		$subject="Assignment Submission";
+		$body="We hace Received Your Assignment Your Application Under Processing";
+		$headers="From: <webmaster@example.com>";
 		//$message="Please find your assignment below
 	    //Assignment: Create an api";
 		 //More headers
@@ -246,11 +248,11 @@ Class Action {
 		//$headers .= 'Cc: myboss@example.com' . "\r\n";
 		
 		//mail($to,$subject,$message,$headers);
-		//if (mail($to_email, $subject, $body, $headers)) {
-		//	echo "Email successfully sent to $to_email...";
-		//} else {
-		//	echo "Email sending failed...";
-		//}
+		if (mail($emai, $subject, $body, $headers)) {
+			echo "Email successfully sent to $to_email...";
+		} else {
+			echo "Email sending failed...";
+		}
 			return 1;
 	}
 	function delete_application(){
